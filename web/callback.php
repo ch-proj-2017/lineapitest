@@ -9,7 +9,7 @@ $MENU_KNOW_2 = "湿度を知りたい";
 $MENU_KNOW_3 = "音声情報を知りたい";
 $MENU_KNOW_4 = "電力を知りたい";
 $MENU_KNOW_5 = "電気料金を知りたい";
-$MENU_KNOW_6 = "...";
+$MENU_KNOW_6 = "設定";
 
 
 require('../vendor/autoload.php');
@@ -51,29 +51,24 @@ if ($text == 'はい') {
       "type" => "buttons",
       "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/01.jpg",
       "title" => "ホーム確認",
-      "text" => "どのサービスにしますか",
-      "actions" => [
-          [
-            "type" => "postback",
-            "label" => "温度確認",
-            "data" => "action=buy&itemid=123"
-          ],
-          [
-            "type" => "postback",
-            "label" => "生体センサー",
-            "data" => "action=pcall&itemid=123"
-          ],
-          [
-            "type" => "uri",
-            "label" => "電力量確認",
-            "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
-          ],
-          [
-            "type" => "message",
-            "label" => "その他",
-            "text" => "その他を選択"
-          ]
-      ]
+      "text" => "下記より選択してください",
+    		"actions" => [
+    				[
+    						"type" => "message",
+    						"label" => "温度確認",
+    						"text" => "温度確認"
+    				],
+    				[
+    						"type" => "message",
+    						"label" => "エアコン温度調節",
+    						"text" => "エアコン温度調節"
+    				],
+    				[
+    						"type" => "message",
+    						"label" => "エアコンモード調節",
+    						"text" => "エアコンモード調節"
+    				]
+    		]
     ]
   ];
 } else if ($text == $MENU_KNOW_1) {
@@ -244,8 +239,7 @@ function menuKnow01() {
 			"altText" => "どちらの部屋の温度を知りたいですか",
 			"template" => [
 					"type" => "buttons",
-					"thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/01.jpg",
-					"title" => "温度確認",
+					"title" => "温度",
 					"text" => "どちらの部屋の温度が知りたいですか",
 					"actions" => [
 							[
@@ -303,8 +297,30 @@ function menuKnow05() {
 // メニューの６番目が押された場合
 function menuKnow06() {
 	$textData = [
-			"type" => "text",
-			"text" => "何かお困りですか?"
+			"type" => "template",
+			"altText" => "設定",
+			"template" => [
+					"type" => "buttons",
+					"title" => "設定",
+					"text" => "下記より選択してください",
+					"actions" => [
+							[
+									"type" => "message",
+									"label" => "ユーザー情報",
+									"text" => "ユーザー情報設定"
+							],
+							[
+									"type" => "message",
+									"label" => "使用路線",
+									"text" => "使用路線設定"
+							],
+							[
+									"type" => "message",
+									"label" => "天気予報エリア",
+									"text" => "天気予報エリア設定"
+							]
+					]
+			]
 	];
 	return $textData;
 }
