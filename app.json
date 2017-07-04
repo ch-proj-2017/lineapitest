@@ -1,12 +1,12 @@
 {
     "name": "#LINE Messaging API test PHP",
     "description": "heroku 上にデプロイされる LINE Messaging APIのサーバースクリプト",
-    "repository": "https://github.com/keisukenozaki/line-app-test-php.git",
+    "repository": "https://github.com/ch-proj-2017/lineapitest",
     "logo": "http://hi-five.bz/wp-content/uploads/2015/07/cropped-cropped-01.png",
     "keywords": ["php", "line-messaging-api"],
     "env": {
       "LINE_CHANNEL_ACCESS_TOKEN": {
-        "description": "Channel Access Token (LINE developers の Basic information で確認できます)"
+        "description": "cJOgj0SE4sKeQpMT92XIE7r4w73xPKqQGRQkQul2xy6rFOyOa3QUJCAT2FBpA4Vcdd84Ivt6VeWu+LRBGwEOpdG/SDyxWWxjTcrIvI574irJqqYsqKKJ74piu3OZddOYSXuPTkEYYo0A7EGVgx1tMAdB04t89/1O/w1cDnyilFU="
       }
     }
 }
