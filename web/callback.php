@@ -51,24 +51,29 @@ if ($text == 'はい') {
       "type" => "buttons",
       "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/01.jpg",
       "title" => "ホーム確認",
-      "text" => "下記より選択してください",
-    		"actions" => [
-    				[
-    						"type" => "message",
-    						"label" => "温度確認",
-    						"text" => "温度確認"
-    				],
-    				[
-    						"type" => "message",
-    						"label" => "エアコン温度調節",
-    						"text" => "エアコン温度調節"
-    				],
-    				[
-    						"type" => "message",
-    						"label" => "エアコンモード調節",
-    						"text" => "エアコンモード調節"
-    				]
-    		]
+      "text" => "どのサービスにしますか",
+      "actions" => [
+          [
+            "type" => "postback",
+            "label" => "温度確認",
+            "data" => "action=buy&itemid=123"
+          ],
+          [
+            "type" => "postback",
+            "label" => "生体センサー",
+            "data" => "action=pcall&itemid=123"
+          ],
+          [
+            "type" => "uri",
+            "label" => "電力量確認",
+            "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
+          ],
+          [
+            "type" => "message",
+            "label" => "その他",
+            "text" => "その他を選択"
+          ]
+      ]
     ]
   ];
 } else if ($text == $MENU_KNOW_1) {
@@ -236,26 +241,26 @@ function api_get_user_profile_request($userId) {
 function menuKnow01() {
 	$textData = [
 			"type" => "template",
-			"altText" => "どちらの部屋の温度を知りたいですか",
+			"altText" => "温度",
 			"template" => [
 					"type" => "buttons",
 					"title" => "温度",
-					"text" => "どちらの部屋の温度が知りたいですか",
+					"text" => "下記より選択してください",
 					"actions" => [
 							[
 									"type" => "message",
-									"label" => "リビングルーム",
-									"text" => "リビングルームの温度を確認して"
+									"label" => "温度確認",
+									"text" => "温度確認"
 							],
 							[
 									"type" => "message",
-									"label" => "○○ちゃんの部屋",
-									"text" => "○○ちゃんの部屋の温度を確認して"
+									"label" => "エアコン温度調節",
+									"text" => "エアコン温度調節"
 							],
 							[
 									"type" => "message",
-									"label" => "○○くんの部屋",
-									"text" => "○○くんの部屋の温度を確認して"
+									"label" => "エアコンモード調節",
+									"text" => "エアコンモード調節"
 							]
 					]
 			]
