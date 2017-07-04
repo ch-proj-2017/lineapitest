@@ -4,7 +4,7 @@ $accessToken = getenv('LINE_CHANNEL_ACCESS_TOKEN');
 $channel_id = "1517932295";
 $channel_secret = "5ff988446003c365d05128b99d797582";
 
-$MENU_KNOW_1 = "温度を知りたい";
+$MENU_KNOW_1 = "温度";
 $MENU_KNOW_2 = "湿度を知りたい";
 $MENU_KNOW_3 = "音声情報を知りたい";
 $MENU_KNOW_4 = "電力を知りたい";
