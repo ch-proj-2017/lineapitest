@@ -7,7 +7,7 @@ $channel_secret = "5ff988446003c365d05128b99d797582";
 $MENU_KNOW_1 = "温度";
 $MENU_KNOW_2 = "湿度を知りたい";
 $MENU_KNOW_3 = "音声情報を知りたい";
-$MENU_KNOW_4 = "電力を知りたい";
+$MENU_KNOW_4 = "電力";
 $MENU_KNOW_5 = "電気料金を知りたい";
 $MENU_KNOW_6 = "設定";
 
@@ -169,20 +169,20 @@ if ($text == 'はい') {
 } else {
   $response_format_text = [
     "type" => "template",
-    "altText" => "こんにちは" . $displayName ."さん 何かご用ですか？（はい／いいえ）",
+    "altText" => "こんにちは" . $displayName ."さん 何かご用ですか？",
     "template" => [
         "type" => "confirm",
-        "text" => "こんにちは" . $displayName ."さん 何かご用ですか？",
+        "text" => "こんにちはコネクテッドホームです" . $displayName ."さん 何かご用ですか？こちらでは以下のようなサービスをご利用できます",
         "actions" => [
             [
               "type" => "message",
-              "label" => "はい",
-              "text" => "はい"
+              "label" => "温度確認、エアコン温度調節",
+              "text" => "温度"
             ],
             [
               "type" => "message",
-              "label" => "いいえ",
-              "text" => "いいえ"
+              "label" => "電力量などの確認",
+              "text" => "電力"
             ]
         ]
     ]
